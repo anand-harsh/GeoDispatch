@@ -1,8 +1,13 @@
 package com.floxcon.project.caver.fccabApp.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.locationtech.jts.geom.Point;
 
 @Entity
+@Getter
+@Setter
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,4 +21,7 @@ public class Driver {
 
     private Double rating;
     private Boolean available;
+    @Column(columnDefinition = "Geometry(Point, 4326)") // 4326 is for earth
+    Point currentLocation;
+
 }
