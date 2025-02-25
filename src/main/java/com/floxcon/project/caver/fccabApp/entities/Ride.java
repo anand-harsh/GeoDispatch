@@ -4,11 +4,16 @@ import com.floxcon.project.caver.fccabApp.entities.enums.PaymentMethod;
 import com.floxcon.project.caver.fccabApp.entities.enums.RideRequestStatus;
 import com.floxcon.project.caver.fccabApp.entities.enums.RideStatus;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.locationtech.jts.geom.Point;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Getter
+@Setter
 public class Ride {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
